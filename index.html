@@ -5,20 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+   <style>
+    body{
+       background: #eee;
+       max-width: 960px;
+       margin: 20px auto;
+       }
+       
+    p, h4, ul{
+       margin: 0;
+       padding: 0;
+    } 
 
+     li{
+      list-style-type: none;
+      background: #fff;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    li.fav{
+      background: #ff9ed2;
+      color: white;
+    }
+   </style>
 </head>
 <body>
     <div id="app">
-        <div v-if="showBooks">
-            <h1> {{ title }} - {{ author }} - {{ age }}</h1>
-            <button v-on:click="age++">increase the age</button>
-            <button @click="age--">decrease the age</button>
-            <p @click="changeTitle()">change title</p>
-            <p @click="changeAuthor('mohab')">change author</p>
-            <button @click="changeShowBooksStatus()">Hide</button>
+       <div v-if="showBooks">
+            <ul>
+                <li v-for="book in books" :class="{fav: book.isFav}">
+                    <img v-bind:src="book.img" :alt="book.title" height="50" width="50">
+                    <h4>{{ book.title }}</h4>
+                    <p>{{ book.author }}</p>
+                    <br><br>
+                </li>
+            </ul>
        </div>
-       <button v-else @click="changeShowBooksStatus()">Show books</button>
-
     </div>
     <script src="app.js"></script>
 </body>
