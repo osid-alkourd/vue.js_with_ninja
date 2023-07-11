@@ -2,23 +2,17 @@ const app = Vue.createApp({
   //  template: '<h2>Hello osid</h2>'
   data() {
     return {
-        title: "Vue lesson" , 
-        author: "Osid Alkourd" , 
-        age: 22 , 
-        showBooks: true
+        showBooks: true , 
+        books: [
+          {title: 'Java' , author: 'Ahmed' , img: 'assets/1.png' , isFav: true} , 
+          {title: 'PHP' , author: 'Mohammed', img: 'assets/2.png', isFav: false} , 
+          {title: 'Node.js' , author: 'Amer', img: 'assets/3.jpg', isFav: true}
+        ]
     }
   } , 
 
   methods: {
-    changeTitle(){
-      this.title = "Vue3 lesson"
-    } , 
-    changeAuthor(learner){
-      this.author = learner
-    } , 
-    changeShowBooksStatus(){
-      this.showBooks = !this.showBooks
-    }
+   
   }
 })
 app.mount('#app')
