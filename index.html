@@ -8,6 +8,18 @@
 
 </head>
 <body>
+    <div id="app">
+        <div v-if="showBooks">
+            <h1> {{ title }} - {{ author }} - {{ age }}</h1>
+            <button v-on:click="age++">increase the age</button>
+            <button @click="age--">decrease the age</button>
+            <p @click="changeTitle()">change title</p>
+            <p @click="changeAuthor('mohab')">change author</p>
+            <button @click="changeShowBooksStatus()">Hide</button>
+       </div>
+       <button v-else @click="changeShowBooksStatus()">Show books</button>
+
+    </div>
     <script src="app.js"></script>
 </body>
 </html>
