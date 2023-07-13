@@ -1,6 +1,15 @@
+
+<template>
+  <main>
+    <Modal/>
+  </main>
+</template>
+
 <script>
+import Modal from './components/Modal.vue'
 export default {
   name: "App",
+  components: {Modal} ,
   data() {
     return {
       title: "my name is osid",
@@ -8,21 +17,15 @@ export default {
   },
   methods: {
     handleClick() {
-      console.log(this.$refs.name)
-      this.$refs.name.classList.add('active')
-      this.$refs.name.focus()
+      console.log(this.$refs.name);
+      this.$refs.name.classList.add("active");
+      this.$refs.name.focus();
     },
   },
 };
 </script>
 
-<template>
-  <main>
-    <h1>{{ title }}</h1>
-    <input type="text" ref="name" />
-    <button @click="handleClick">Click</button>
-  </main>
-</template>
+
 
 <style scoped>
 header {
