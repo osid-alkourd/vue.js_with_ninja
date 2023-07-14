@@ -1,7 +1,8 @@
 
 <template>
   <main>
-    <Modal/>
+    <Modal  header="Modal content" 
+    text="this is about model content and lesson"/>
   </main>
 </template>
 
