@@ -1,29 +1,28 @@
 
 <template>
-  <main>
-    <Modal :header="header" 
-    :text="text" :theme="theme"/>
-  </main>
+  <div v-if="showModal">
+    <Modal :header="header" :text="text" :theme="theme" @close="toggleModal" />
+  </div>
+  <button @click="toggleModal">show</button>
 </template>
 
 <script>
-import Modal from './components/Modal.vue'
+import Modal from "./components/Modal.vue";
 export default {
   name: "App",
-  components: {Modal} ,
+  components: { Modal },
   data() {
     return {
       title: "my name is osid",
       header: "Modal content",
-      text: "this is about model content and lesson" , 
-      theme: "sale"
+      text: "this is about model content and lesson",
+      theme: "sale",
+      showModal: false,
     };
   },
   methods: {
-    handleClick() {
-      console.log(this.$refs.name);
-      this.$refs.name.classList.add("active");
-      this.$refs.name.focus();
+    toggleModal() {
+      this.showModal = !this.showModal;
     },
   },
 };
