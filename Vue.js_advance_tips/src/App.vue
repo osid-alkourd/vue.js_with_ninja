@@ -1,8 +1,8 @@
 
 <template>
   <main>
-    <Modal  header="Modal content" 
-    text="this is about model content and lesson"/>
+    <Modal :header="header" 
+    :text="text" :theme="theme"/>
   </main>
 </template>
 
@@ -14,6 +14,9 @@ export default {
   data() {
     return {
       title: "my name is osid",
+      header: "Modal content",
+      text: "this is about model content and lesson" , 
+      theme: "sale"
     };
   },
   methods: {
